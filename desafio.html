@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<HTML>
+<head>
+
+
+<style>
+header{
+     background-color: #F200AE;
+	 color: #fff;
+	 padding: 15px;
+	 text-align: center;
+	 font-style: italic;
+	 }
+	 
+	 
+body{
+    background-color: #FFC9F0;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  
+  
+  h1 {
+    color: #fff;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  
+
+  label {
+    display: inline-block;
+    font-size: 20px;
+    margin-bottom: 10px;
+	color: #B90085; 
+  }
+  
+  
+  input[type="text"], input[type="number"] {
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 18px;
+    padding: 10px;
+    width: 30%;
+    align: center;
+  }
+  
+  
+  button {
+    background-color: #F200AE;
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 10px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease-in-out;
+    width: 10%;
+  }
+  
+  button:hover {
+    background-color: #555;
+  }
+  
+  
+  #resultado {
+    background-color: #FFC9F0;
+    border: 1px solid #FFC9F0;
+    border-radius: 20px;
+    font-size: 18px;
+    margin-top: 20px;
+    padding: 20px;
+    text-align: center;
+    width: 30%;
+    margin-left: 35%;
+  }
+  
+  h3{
+    color: #B90085;  
+  }
+  </style>
+
+
+	<title>Ver sua idade</title>
+	<meta charset="UTF-8">
+	<script>
+		function verificarFaseVida() {
+			
+			var nome = document.getElementById("nome").value;
+			var idade = parseInt(document.getElementById("idade").value);
+
+			
+			if (idade <= 11) {
+				var fase = "Criança";
+			} else if (idade >= 12 && idade <= 20) {
+				var fase = "Adolescente";
+			} else if (idade >= 21 && idade <= 65) {
+				var fase = "Adulto";
+			} else {
+				var fase = "Idoso";
+			}
+
+			
+			document.getElementById("resultado").innerHTML = nome + ", você está na fase da vida: " + fase;
+		}
+	</script>
+</head>
+<header>
+ <h1>Ver sua idade</h1>
+</header>
+<body>
+	<div class="texts">
+	  <h3 id="descExercício">
+	     Criança - Até 11 anos de idade<br>
+		 <br>
+		 Adolescente - Dos 12 até os 20 anos de idade<br>
+		 <br>
+		 Adulto - Dos 21 até os 65 anos de idade<br>
+		 <br>
+		 Idoso - Acima de 65 anos de idade<br>
+	  </h3>
+	 </div>
+	 <br>
+	 <br>
+	<label for="nome">Nome:</label>
+	<input type="text" id="nome"><br>
+	<br>
+	<label for="idade">Idade:</label>
+	<input type="number" id="idade"><br>
+	<br>
+	<br>
+	<button onclick="verificarFaseVida()">Verificar</button>
+	<div class="resultado" id="resultado"></div>
+</body>
+</html>
